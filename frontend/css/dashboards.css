@@ -1,0 +1,359 @@
+p {
+  color: #ffffff;
+}
+
+/* Estilos para la sección de perfil */
+.profile-section {
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.profile-section h2 {
+  color: white;
+  border-bottom: 1px solid #4a5568;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.profile-section .profile-info p {
+  margin: 0.5rem 0;
+  color: #e2e8f0; /* Blanco ligeramente más suave */
+}
+
+/* Estilos para la sección de notificaciones */
+.notifications-section {
+  background-color: #1a365d;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid #4a5568;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.notifications-section h2 {
+  cursor: pointer;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  margin: 0;
+  user-select: none;
+}
+
+.notifications-section h2:hover {
+  background-color: #2c5282;
+}
+
+.notifications-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.notifications-section .notificacion-item {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+  border-left: 4px solid transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.notifications-section .notificacion-item:hover {
+  background-color: #2c5282;
+}
+
+.notifications-section .notificacion-item.no-leida {
+  background-color: #2c5282;
+  font-weight: bold;
+  border-left: 4px solid #4299e1;
+}
+
+.notifications-section .notificacion-content {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.notifications-section p {
+  margin: 0;
+}
+
+/* Estilos para la lista de máquinas */
+.machine-list {
+  background-color: #2d3748;
+  border: 1px solid #4a5568;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.machine-list h3 {
+  color: white;
+  padding: 0.5rem;
+  margin: 0;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.machine-list h3:hover {
+  background-color: #2c5282;
+}
+
+.machine-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+/* Estilo base para cada ítem de máquina */
+.machine-list .li-maquina {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: #1a365d;
+  color: white;
+  border: 1px solid #4a5568;
+}
+
+/* Estilo al pasar el cursor */
+.machine-list .li-maquina:hover {
+  background-color: #2c5282;
+  border-color: #4299e1;
+}
+
+/* Estilo cuando está seleccionada */
+.machine-list .li-maquina.selected {
+  background-color: #2b6cb0;
+  border-left: 4px solid #4299e1;
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
+  transform: translateX(2px);
+}
+
+/* Contenido de la máquina */
+.machine-list .li-maquina-content {
+  display: block;
+}
+
+.machine-list .span-comercio-details {
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  color: #e2e8f0;
+}
+
+/* Estilos para los botones */
+.machine-list button {
+  background-color: #4299e1;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0.5rem 0 0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.machine-list button:hover {
+  background-color: #3182ce;
+}
+
+.machine-list button:disabled {
+  background-color: #4a5568;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Estilos para el modal de acciones */
+.message-modal {
+  background-color: #1a365d;
+  border: 1px solid #4a5568;
+  border-radius: 8px;
+  padding: 1.5rem;
+  color: white;
+  max-width: 500px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.message-modal h3 {
+  margin-top: 0;
+  color: white;
+  border-bottom: 1px solid #4a5568;
+  padding-bottom: 0.5rem;
+}
+
+/* Estilos para el textarea */
+.message-modal textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 0.8rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  border: 1px solid #4a5568;
+  background-color: #2d3748;
+  color: white;
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.message-modal textarea:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.3);
+}
+
+/* Estilos para los botones del modal */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.modal-actions button {
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.modal-actions button:first-child {
+  background-color: #4a5568;
+  color: white;
+}
+
+.modal-actions button:first-child:hover {
+  background-color: #718096;
+}
+
+.modal-actions button:last-child {
+  background-color: #4299e1;
+  color: white;
+}
+
+.modal-actions button:last-child:hover {
+  background-color: #3182ce;
+}
+
+.modal-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Estilos para el contenedor del checklist */
+.checklist-modal {
+  background-color: #1a365d;
+  border: 1px solid #4a5568;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.checklist-modal h3 {
+  color: white;
+  border-bottom: 1px solid #4a5568;
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Estilos para cada ítem del checklist */
+.checklist-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.checklist-item:hover {
+  background-color: rgba(66, 153, 225, 0.1);
+}
+
+.checklist-item input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #4a5568;
+  border-radius: 4px;
+  margin-right: 0.8rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.checklist-item input[type="checkbox"]:checked {
+  background-color: #4299e1;
+  border-color: #4299e1;
+}
+
+.checklist-item input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checklist-item label {
+  cursor: pointer;
+  flex-grow: 1;
+  user-select: none;
+}
+
+/* Estilos para los botones de acción del checklist */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.action-buttons button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  flex: 1;
+}
+
+.action-buttons .primary-btn {
+  background-color: #4299e1;
+  color: white;
+}
+
+.action-buttons .primary-btn:hover {
+  background-color: #3182ce;
+}
+
+.action-buttons .primary-btn:disabled {
+  background-color: #4a5568;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.action-buttons .danger-btn {
+  background-color: #e53e3e;
+  color: white;
+}
+
+.action-buttons .danger-btn:hover {
+  background-color: #c53030;
+}

@@ -1,0 +1,47 @@
+/* Estilos específicos para la página de perfil */
+.perfil-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.perfil-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.perfil-info {
+    margin-bottom: 20px;
+}
+
+.perfil-info p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.perfil-info strong {
+    display: inline-block;
+    width: 120px;
+}
+
+.edit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.edit-btn:hover {
+    background-color: #0069d9;
+}

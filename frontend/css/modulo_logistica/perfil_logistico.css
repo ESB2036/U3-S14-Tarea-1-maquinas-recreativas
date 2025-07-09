@@ -1,0 +1,81 @@
+body.pantalla_completa {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f1f1;
+  }
+  
+  .menu-container {
+    background-color: #004d99;
+    padding: 10px;
+    text-align: right;
+  }
+  
+  .menu-container button {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #dropdown-menu {
+    position: absolute;
+    right: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    width: 150px;
+  }
+  
+  #dropdown-menu.hidden {
+    display: none;
+  }
+  
+  #dropdown-menu li a {
+    display: block;
+    padding: 8px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  #dropdown-menu li a:hover {
+    background-color: #eee;
+  }
+  
+  .perfil-contenedor {
+    padding: 20px;
+  }
+  
+  .perfil-contenedor h2 {
+    color: #333;
+  }
+  
+  #info-distribucion {
+    background: white;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  
+  #info-distribucion ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #info-distribucion li {
+    margin-bottom: 8px;
+  }
+  
+  .resumen {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+  

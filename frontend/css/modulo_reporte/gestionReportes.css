@@ -1,0 +1,495 @@
+/* Asegurar que todo el texto sea negro */
+.gestion-reportes-container,
+.nuevo-reporte,
+.lista-reportes,
+.tabla-reportes,
+.tabla-reportes th,
+.tabla-reportes td,
+.filtros,
+.filtros label,
+.filtros select {
+  color: rgb(255, 255, 255) !important;
+}
+
+/* Cambiar el color del placeholder para que sea visible */
+.nuevo-reporte textarea::placeholder {
+  color: #666 !important;
+}
+
+/* Asegurar que los selects tengan texto negro */
+.nuevo-reporte select,
+.filtros select {
+  color: black !important;
+}
+
+/* Filtros */
+.filtros {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center; /* CENTRAR FILTROS */
+  gap: 15px;
+}
+
+.filtros label {
+  font-weight: 600;
+}
+
+.filtros select {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: #ffffff; /* Fondo blanco para el filtro */
+  cursor: pointer;
+  color: #fff0f0;
+  font-size: 1rem;
+  outline: none;
+}
+
+.nuevo-reporte h3 {
+  margin-top: 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+.nuevo-reporte form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nuevo-reporte select,
+.nuevo-reporte textarea {
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+.nuevo-reporte textarea {
+  min-height: 100px;
+  resize: vertical;
+  background-color: white;
+  color: #000;
+}
+
+.nuevo-reporte textarea::placeholder {
+  color: #666;
+}
+
+.nuevo-reporte button {
+  align-self: center; /* CENTRAR BOTÓN */
+  padding: 10px 20px;
+  background-color: #4a63fd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.nuevo-reporte button:hover {
+  background-color: #3449db;
+  transform: scale(1.02);
+}
+
+/* Lista de reportes */
+.lista-reportes {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1000px; /* Limitar ancho */
+  color: black;
+}
+
+.lista-reportes h3,
+.lista-reportes p,
+.lista-reportes th,
+.lista-reportes td {
+  color: black !important;
+}
+
+.tabla-reportes {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.tabla-reportes th {
+  background-color: #ffffff;
+  font-weight: 600;
+  border-bottom: 2px solid #000000;
+}
+
+.tabla-reportes td {
+  background-color: #ffffff;
+  border-bottom: 1px solid #000000;
+}
+
+.tabla-reportes tr:hover td {
+  background-color: #000000;
+}
+
+.tabla-reportes button {
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.tabla-reportes button:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+/* Estilos para el modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.modal-historial {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-historial h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.modal-historial h3 {
+  color: #4f6bed;
+  margin-bottom: 1.5rem;
+}
+
+.modal-historial button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.historial-container {
+  margin-top: 1rem;
+}
+
+.tabla-historial {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-historial th, .tabla-historial td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-historial th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+.modal-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 800px;
+}
+.modal-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 5px 10px;
+}
+
+.modal-close-button:hover {
+    color: #666;
+}
+/* Estilos para el modal */
+.modal-reportes {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    color: black !important; /* Asegura que el texto sea negro */
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 5px 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.modal-close-button:hover {
+    color: #666;
+}
+
+/* Asegurar que el contenido del modal tenga texto negro */
+.modal-reportes * {
+    color: black !important;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+    .modal-reportes {
+        width: 95%;
+        padding: 1rem;
+    }
+    
+    .modal-close-button {
+        top: 10px;
+        right: 10px;
+        font-size: 1.2rem;
+    }
+}
+/* Estilos generales para el contenedor de notificaciones */
+.notificaciones-container {
+  background-color: #ffffff;
+  color: #333333 !important;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Encabezado */
+.notificaciones-container h2 {
+  color: #333333 !important;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Contador de notificaciones no leídas */
+.unread-count {
+  background-color: #4a63fd;
+  color: white !important;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+/* Cabecera de notificaciones */
+.notificaciones-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.notificaciones-count {
+  color: #666666 !important;
+  font-size: 0.9rem;
+}
+
+/* Botón para marcar todas como leídas */
+.marcar-todas-btn {
+  background-color: #4a63fd;
+  color: white !important;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.marcar-todas-btn:hover {
+  background-color: #3449db;
+}
+
+/* Lista de notificaciones */
+.notificaciones-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Items de notificación */
+.notificacion-item {
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  border-left: 4px solid #eeeeee;
+}
+
+.notificacion-item.no-leida {
+  background-color: #f0f6ff;
+  border-left-color: #4a63fd;
+}
+
+/* Mensaje de notificación */
+.notificacion-mensaje {
+  color: #333333 !important;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.reporte-descripcion {
+  color: #666666 !important;
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+/* Pie de notificación */
+.notificacion-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #666666 !important;
+}
+
+.notificacion-fecha {
+  margin-right: 10px;
+}
+
+.notificacion-remitente {
+  font-style: italic;
+}
+
+/* Acciones de notificación */
+.notificacion-acciones {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.marcar-leida-btn, .ver-reporte {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.marcar-leida-btn {
+  background-color: #e9ecef;
+  color: #495057 !important;
+  border: 1px solid #dee2e6;
+}
+
+.marcar-leida-btn:hover {
+  background-color: #dee2e6;
+}
+
+.ver-reporte {
+  background-color: #4a63fd;
+  color: white !important;
+  border: none;
+}
+
+.ver-reporte:hover {
+  background-color: #3449db;
+}
+
+/* Mensaje cuando no hay notificaciones */
+.no-notificaciones {
+  color: #666666 !important;
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+}
+
+/* Estados de carga y error */
+.loading {
+  text-align: center;
+  color: #333333 !important;
+  padding: 20px;
+}
+
+.error {
+  background-color: #fff3f3;
+  color: #dc3545 !important;
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.error-icon {
+  display: inline-block;
+  background-color: #dc3545;
+  color: white !important;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  margin-right: 8px;
+}

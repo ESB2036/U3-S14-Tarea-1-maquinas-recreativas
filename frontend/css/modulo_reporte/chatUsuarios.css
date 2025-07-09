@@ -1,0 +1,415 @@
+/* Estructura principal del chat */
+.chat-container {
+  display: flex;
+  height: calc(100vh - 100px);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+}
+
+/* Modos de visualización */
+.chat-container.panel-mode {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.chat-container.modal-scrollable {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Sección de contactos */
+.chat-sidebar {
+  width: 300px;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+  background-color: #ffffff;
+  padding: 15px;
+}
+
+.usuarios-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.usuario-chat-item {
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #f1f3f5;
+  border-left: 4px solid transparent;
+}
+
+.usuario-chat-item:hover {
+  background-color: #e9ecef;
+}
+
+.usuario-chat-item.activo {
+  background-color: #e7f5ff;
+  border-left-color: #4dabf7;
+  font-weight: 500;
+}
+
+.usuario-info {
+  color: #343a40;
+}
+
+.usuario-info strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.usuario-info small {
+  font-size: 0.8em;
+  color: #868e96;
+}
+
+/* Área principal del chat */
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.chat-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+}
+
+.chat-header h3 {
+  margin: 0;
+  color: #212529;
+}
+
+.reportes-list {
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.reportes-list select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background-color: white;
+  color: #000;
+}
+
+/* Área de mensajes */
+.chat-mensajes {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f1f3f5;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Estilos para mensajes */
+.comentario-item {
+  max-width: 75%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Mensajes del emisor (usuario actual) */
+.comentario-item.emisor {
+  align-self: flex-end;
+  background-color: #d0ebff;
+  border-bottom-right-radius: 4px;
+
+    color: #1864ab !important;
+  border: 1px solid #a5d8ff;
+}
+
+.comentario-item.emisor::before {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-left-color: #d0ebff;
+  border-right: 0;
+}
+
+/* Mensajes del receptor */
+.comentario-item.receptor {
+  align-self: flex-start;
+  background-color: #ffffff;
+  border-bottom-left-radius: 4px;
+  color: #495057;
+  border: 1px solid #dee2e6;
+}
+
+.comentario-item.receptor::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-right-color: #ffffff;
+  border-left: 0;
+}
+
+.comentario-item p {
+  margin: 0 0 6px 0;
+}
+
+.comentario-item small {
+  display: block;
+  font-size: 0.75em;
+  color: #868e96;
+  text-align: right;
+}
+
+/* Formulario de envío */
+.chat-form {
+  display: flex;
+  gap: 10px;
+  padding: 15px 20px;
+  border-top: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+}
+
+.chat-form textarea {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  resize: none;
+  min-height: 50px;
+  max-height: 100px;
+}
+
+.chat-form button {
+  padding: 0 20px;
+  background-color: #4dabf7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.chat-form button:hover {
+  background-color: #339af0;
+}
+
+/* Estado cuando no hay chat seleccionado */
+.no-chat-selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #868e96;
+  font-size: 1.1em;
+}
+
+/* Colores por tipo de usuario (opcional) */
+.usuario-chat-item.tipo-tecnico {
+  border-left-color: #40c057;
+}
+
+.usuario-chat-item.tipo-administrador {
+  border-left-color: #f783ac;
+}
+
+.usuario-chat-item.tipo-contabilidad {
+  border-left-color: #ffa94d;
+}
+
+.usuario-chat-item.tipo-logistica {
+  border-left-color: #748ffc;
+}
+/* Estilos para el modal */
+.modal-reportes {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  
+  /* Configuración del tamaño máximo y scroll */
+  max-width: 90vw; /* 90% del ancho de la ventana */
+  width: 800px; /* Ancho fijo preferido */
+  max-height: 90vh; /* 90% del alto de la ventana */
+  overflow-y: auto; /* Scroll vertical cuando se excede el max-height */
+  
+  /* Padding y márgenes */
+  padding: 2rem;
+  margin: 20px 0; /* Espacio vertical mínimo */
+}
+
+/* Estilos para el overlay del modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px; /* Espacio alrededor del modal */
+}
+
+/* Contenido dentro del modal */
+.gestion-reportes-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ajustes para contenido largo */
+.lista-reportes {
+  max-height: 50vh; /* Altura máxima para la tabla */
+  overflow-y: auto; /* Scroll interno si es necesario */
+  margin-bottom: 20px;
+}
+
+/* Botón de cerrar siempre visible */
+.modal-close-button {
+  position: sticky;
+  top: 10px;
+  right: 10px;
+  align-self: flex-end;
+  z-index: 1001;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.modal-historial {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-historial h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.modal-historial h3 {
+  color: #4f6bed;
+  margin-bottom: 1.5rem;
+}
+
+.modal-historial button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.historial-container {
+  margin-top: 1rem;
+}
+
+.tabla-historial {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-historial th, .tabla-historial td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-historial th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+.modal-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 800px;
+}
+/* Estilos para el header del chat */
+.chat-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #4a63fd;
+  color: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.chat-modal-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.chat-close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.chat-close-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Ajustes para el modo panel */
+.chat-modal-container.panel-mode {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Ajustes para el modo ventana completa */
+.chat-modal-container.window-mode {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}

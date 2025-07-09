@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+:root {
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: #222;
+  --text-color-dark: #000000;
+  --text-color-light: #ffffff;
+  --bg-color-light: #f5f5f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background: linear-gradient(135deg, #07224c 0%, #124258 50%, #3b4a66 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Inter", sans-serif;
+  color: #222;
+}
+
+h1,
+h3 {
+  transition: color 0.3s ease, transform 0.3s ease;
+  color: #00b7ff;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+}
+
+h2 {
+  color: #ffffff;
+}
+
+a {
+  margin: 2rem;
+  transition: color 0.3s ease;
+}
+
+.perfil-contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 100px);
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.btn-regresar {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+  margin-bottom: 2.5rem;
+}
+
+.btn-regresar:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.btn-regresar:active {
+  transform: scale(0.98);
+}
+
+.gestion-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 3rem;
+}
+
+.card-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.card-button {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px) saturate(180%);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  width: 250px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  color: white;
+}
+
+.card-button:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.card-button h3 {
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.card-button p {
+  color: #ddd;
+}
+
+.icono-card {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+button {
+  background-color: #4f6bed;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.15s ease-in-out, background-color 0.25s ease,
+    box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+button:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 6px 14px rgba(79, 107, 237, 0.15);
+}
+
+button:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 10px rgba(79, 107, 237, 0.1);
+}
+
+@media (max-width: 850px) {
+  .card-buttons-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .gestion-title {
+    font-size: 2.2rem;
+  }
+
+  .btn-regresar {
+    margin-bottom: 2rem;
+  }
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: none;
+}
+
+.admin-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.admin-card {
+  background: linear-gradient(135deg, #05d3cc, #063c60);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.admin-card span {
+  font-size: 4rem;
+  color: #fff;
+  display: block;
+}
+
+.admin-card h3 {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  color: #fff;
+}
+
+@media (max-width: 850px) {
+  .admin-cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.header-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.header-controls button {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px) saturate(180%);
+  border: none;
+  border-radius: 12px;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.header-controls button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.header-controls button:active {
+  transform: scale(0.97);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-historial {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-historial h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.modal-historial h3 {
+  color: #4f6bed;
+  margin-bottom: 1.5rem;
+}
+
+.modal-historial button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.historial-container {
+  margin-top: 1rem;
+}
+
+.tabla-historial {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-historial th,
+.tabla-historial td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-historial th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+.modal-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 800px;
+}

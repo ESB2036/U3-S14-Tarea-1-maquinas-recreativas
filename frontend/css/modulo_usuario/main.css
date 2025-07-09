@@ -1,0 +1,216 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #3a6073, #16222a); /* Fondo atractivo */
+  font-family: "Inter", sans-serif;
+}
+
+header {
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pantalla_completa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 80px;
+  background-image: url("/frontend/imagenes/bg1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.contenedor_todo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  gap: 2rem;
+}
+
+.caja_trasera {
+  flex: 1;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.caja_trasera_login {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+.contenedor_login_register {
+  flex: 1;
+  max-width: 400px;
+}
+
+.formulario_login {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  color: white;
+}
+
+.formulario_login h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.formulario_login input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.formulario_login input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.formulario_login input:focus {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.formulario_login button {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.formulario_login button:hover {
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  transform: scale(1.02);
+}
+
+.titulo-header {
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.error-message {
+  color: #ff4b4b;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+@media (max-width: 850px) {
+  .contenedor_todo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .caja_trasera {
+    display: none;
+  }
+
+  .formulario_login {
+    width: 100%;
+    padding: 2rem 1.5rem;
+  }
+}
+
+.requisitos-postulante {
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 1000px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.requisitos-postulante h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.requisitos-tipos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.requisito-card {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 15px 20px;
+  width: 230px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.requisito-card h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.requisito-card ul {
+  list-style: disc;
+  padding-left: 18px;
+}
+
+.requisito-card li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.boton-info-sistema {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.3rem 0.8rem; /* Puedes reducirlo si aún se ve muy alto */
+  border-radius: 12px;
+  font-size: 0.875rem; /* Tamaño de letra más pequeño (14px aprox) */
+  line-height: 1.2;     /* Altura de línea más ajustada */
+  cursor: pointer;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+
+.boton-info-sistema:hover {
+  background: rgba(255, 255, 255, 0.25);
+}

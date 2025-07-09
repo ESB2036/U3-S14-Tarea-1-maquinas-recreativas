@@ -1,0 +1,36 @@
+.perfil-contenedor {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+}
+
+h2, h3 {
+  color: #333;
+}
+
+.tabla-informes table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+}
+
+.tabla-informes th, .tabla-informes td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.tabla-informes th {
+  background-color: #f2f2f2;
+}
+
+.menu-container {
+  background-color: #444;
+  color: white;
+  padding: 10px;
+}
+
+.volver a {
+  margin-right: 10px;
+}

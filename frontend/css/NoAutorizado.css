@@ -1,0 +1,42 @@
+.no-autorizado-container {
+  background-color: #1a365d;
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #4a5568;
+  margin: 2rem auto;
+  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.no-autorizado-container h1 {
+  color: white;
+  border-bottom: 1px solid #4a5568;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.no-autorizado-container p {
+  color: #e2e8f0;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.no-autorizado-container a {
+  display: inline-block;
+  background-color: #4299e1;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.no-autorizado-container a:hover {
+  background-color: #3182ce;
+}

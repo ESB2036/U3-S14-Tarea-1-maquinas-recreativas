@@ -1,0 +1,194 @@
+/* Contenedor principal */
+.register-admin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #07224c 0%, #124258 50%, #3b4a66 100%);
+}
+
+/* Título separado del menú */
+.register-admin-container h2 {
+  color: white;
+  margin-top: 4rem; /* AQUI LO BAJAMOS MÁS */
+  margin-bottom: 2.5rem;
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+/* Formulario separado del menú */
+form {
+  margin: 1.5rem auto; /* ← Este auto lo centra horizontalmente */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px) saturate(180%);
+  color: #999898;
+  padding: 2.5rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.8s ease forwards;
+}
+
+
+/* Grupo de campos */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 10px;
+  color: #000;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.form-group input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #4f6bed;
+}
+
+/* Estilo de los select */
+.form-group select {
+  padding: 0.9rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-caret-down-fill" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658c-.566-.682-.106-1.658.753-1.658h9.592c.86 0 1.32.976.753 1.658L8.753 11.14a1 1 0 0 1-1.506 0z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  cursor: pointer;
+  color: #000; /* Color del texto */
+}
+
+.form-group select option {
+  background-color: #fff; /* Fondo de las opciones */
+  color: #000; /* Color del texto de las opciones */
+}
+
+.form-group select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #4f6bed;
+}
+
+/* Botones */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.form-actions button {
+  background-color: #4f6bed;
+  color: white;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-actions button:hover {
+  background-color: #4058c8;
+  transform: translateY(-2px);
+}
+
+.form-actions button:active {
+  transform: scale(0.97);
+}
+
+/* Mensajes */
+.error-message, .success-message {
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.error-message {
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+}
+
+.success-message {
+  background-color: rgba(0, 128, 0, 0.8);
+  color: white;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  form {
+    padding: 2rem;
+  }
+
+  .register-admin-container h2 {
+    font-size: 2.2rem;
+  }
+}
+/* Header sin fondo y sin posición sticky */
+.admin-header {
+  background: transparent; /* Sin fondo */
+  backdrop-filter: none;   /* Sin desenfoque */
+  box-shadow: none;        /* Sin sombra */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: static; /* IMPORTANTE: Esto hace que no sea sticky ni fijo */
+  
+}
+
+/* Opcional: Botones del header */
+.header-controls button {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px) saturate(180%);
+  border: none;
+  border-radius: 12px;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.header-controls button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.header-controls button:active {
+  transform: scale(0.97);
+}
+

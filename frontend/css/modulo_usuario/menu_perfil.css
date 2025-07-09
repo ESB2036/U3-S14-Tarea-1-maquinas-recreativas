@@ -1,0 +1,39 @@
+/* Estilos para el menú de perfil */
+.profile-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.menu-dropdown.active {
+    display: block;
+}
+
+.menu-dropdown a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-dropdown a:hover {
+    background-color: #f1f1f1;
+}

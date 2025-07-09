@@ -1,0 +1,277 @@
+/* Contenedor de los filtros */
+.contenedor-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+/* Estilo general de inputs y selects */
+.contenedor-filtros input,
+.contenedor-filtros select {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px) saturate(180%);
+  font-size: 1rem;
+  color: white;
+  min-width: 180px;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  outline: none;
+}
+
+/* Placeholder y opciones en blanco */
+.contenedor-filtros input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Select personalizado con flecha visible */
+.contenedor-filtros select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-caret-down-fill" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658c-.566-.682-.106-1.658.753-1.658h9.592c.86 0 1.32.976.753 1.658L8.753 11.14a1 1 0 0 1-1.506 0z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  cursor: pointer;
+}
+
+/* Opciones del select con fondo visible */
+.contenedor-filtros select option {
+  background-color: white;
+  color: black;
+}
+
+/* Hover y focus para todos */
+.contenedor-filtros input:hover,
+.contenedor-filtros select:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(79, 107, 237, 0.7);
+}
+
+.contenedor-filtros input:focus,
+.contenedor-filtros select:focus {
+  box-shadow: 0 0 0 3px #4f6bed;
+}
+
+/* Botón de buscar con mismo estilo */
+.contenedor-filtros button {
+  background-color: #4f6bed;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contenedor-filtros button:hover {
+  background-color: #4058c8;
+  transform: translateY(-2px);
+}
+
+.contenedor-filtros button:active {
+  transform: scale(0.97);
+}
+
+/* Contenedor de la tabla con scroll horizontal */
+.contenedor-tabla {
+  width: 100%;
+  max-width: 1200px; /* No se vuelve gigante */
+  margin: 2rem auto;  /* Centrado horizontal */
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Tabla compacta y estilizada */
+.contenedor-tabla table {
+  width: 100%;
+  min-width: 900px; /* Así no se deforma en pantallas pequeñas */
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px) saturate(180%);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Encabezado de la tabla */
+.contenedor-tabla th {
+  padding: 1rem;
+  background-color: rgba(79, 107, 237, 0.8);
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Celdas de la tabla */
+.contenedor-tabla td {
+  padding: 0.8rem;
+  text-align: center;
+  color: white;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Fila alterna */
+.contenedor-tabla tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Hover en filas */
+.contenedor-tabla tr:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Botones dentro de la tabla */
+.contenedor-tabla button {
+  background-color: #4f6bed;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin: 0.2rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contenedor-tabla button:hover {
+  background-color: #4058c8;
+  transform: translateY(-2px);
+}
+
+.contenedor-tabla button:active {
+  transform: scale(0.97);
+}
+
+/* Header sin fondo ni sticky */
+.admin-header {
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: static; /* No se mueve, no es sticky ni fixed */
+}
+
+/* Botones del header */
+.header-controls button {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px) saturate(180%);
+  border: none;
+  border-radius: 12px;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.header-controls button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.header-controls button:active {
+  transform: scale(0.97);
+}
+
+.consultar-usuarios-container {
+  padding: 2rem 5%;
+}
+/* Estilos para el modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-historial {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-historial h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.modal-historial h3 {
+  color: #4f6bed;
+  margin-bottom: 1.5rem;
+}
+
+.modal-historial button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.historial-container {
+  margin-top: 1rem;
+}
+
+.tabla-historial {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-historial th{
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #000;
+}
+
+.tabla-historial td {
+  color: #ffff;
+
+  }
+
+.tabla-historial th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+.modal-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 800px;
+}
